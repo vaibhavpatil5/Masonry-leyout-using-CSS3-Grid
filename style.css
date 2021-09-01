@@ -1,0 +1,95 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
+
+	*{
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		font-family: 'Handlee', cursive;
+	}	
+
+	body
+	{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		min-height: 100vh;
+		background-color: #222;
+		overflow-x: hidden;
+	}
+
+	.container{
+		position: relative;
+		max-width: 100%;
+		display: grid;
+		grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); 
+		grid-template-rows: minmax(100px,auto);
+		margin: 40px;
+		grid-auto-flow: dense;
+		grid-gap: 10px;
+	}
+
+	h5{
+		color: #fff;
+		padding: 4px;
+    	writing-mode: vertical-rl;
+	}
+
+
+	.container .box{
+		background-color:#333;
+		padding: 20px;
+		font-size: 20px;
+		color: #fff;
+		place-items:center;
+		text-align: center;
+		transition: 0.5s;
+		display: grid;
+	}
+
+	.container .box:hover{
+		background: #e91e63
+		}
+
+	.container .box img{
+		position: relative;
+		max-width: 100px;
+		margin-bottom: 10px; 
+	}
+
+	.container .box:nth-child(1){
+		grid-column: 1/3;
+		grid-row: 1/2;
+	}
+
+	.container .box:nth-child(2){
+		grid-row: 1/3;
+		grid-column: 3/4;
+	}
+
+	.container .box:nth-child(4){
+		grid-row: 2/5;
+		
+	}
+
+	.container .box:nth-child(5){
+		grid-column: span 3;
+		grid-row: span 2; 
+	}
+
+
+	@media (max-width: 991px)
+	{
+		.container
+		{
+			grid-template-columns:repeat(auto-fill,minmax(50%,1fr)); 
+			grid-template-rows: minmax(auto,auto);
+		}
+
+		.container .box
+		{
+			grid-column: unset !important;
+			grid-row: unset !important; 
+		}
+
+	}
